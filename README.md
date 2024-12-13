@@ -104,9 +104,6 @@ Device Drivers --->
                         [*] Media USB Adapeters --->
                                 <*> USB Video Class (UVC)
                                 <*> GSPCA based webcams
-                                
-                        
-                
 ```        
 
 And we proceed to build the new kernel and copy it to replace the old one
