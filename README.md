@@ -91,23 +91,23 @@ sudo mv config .config && \
 sudo make menuconfig
 ```
 
-A new window will open with the kernel configuration:
-1) Using the "up" and "down" arrows, go down to "Device Drivers" and go inside it by pressing "enter".
-2) For our case, we will be configuring a WebCam, so we will now go down and check "Multimedia Support" (To check it, press the "spacebar" twice untill you see "<*>  Multimedia Support")
-3) Now go inside "Multimedia Support" by using the "up" and "down" arrows, pressing "enter".
-4) Check "Filter Media drivers" (To check it, press the "spacebar" twice untill you see "\[*] Filter Media drivers")
-5) Now go inside "Media device types" by using the "up" and "down" arrows, pressing "enter".
-6) Check "Camera and video grabbers" (To check it, press the "spacebar" twice untill you see "\[*] Camera and video grabbers")
-7) Now go back by scrolling to "Exit" using the "right" and "left" arrows and hit "enter".
-8) Now go inside "Video4Linux options" by using the "up" and "down" arrows, pressing "enter".
-9) Check "V4L2 sub-device userspace API" (To check it, press the "spacebar" twice untill you see "\[*] V4L2 sub-device userspace API")
-10) Now go back by scrolling to "Exit" using the "right" and "left" arrows and hit "enter".
-11) Now go inside "Media Drivers" by using the "up" and "down" arrows, pressing "enter".
-12) Check "Media USB Adapeters" (To check it, press the "spacebar" twice untill you see "\[*] Media USB Adapeters")
-13) Now go inside "Media USB Adapeters" by using the "up" and "down" arrows, pressing "enter".
-14) Check "USB Video Class (UVC)" (To check it, press the "spacebar" twice untill you see "<*> USB Video Class (UVC)")
-15) Check "GSPCA based webcams" (To check it, press the "spacebar" twice untill you see "<*> GSPCA based webcams")
-16) Finally, go back by scrolling to "Exit" using the "right" and "left" arrows and hit "enter" untill a rpompt appears asking us if we want to save. Select "yes".
+A new window will open with the kernel configuration. Using the "arrow keys", and "enter" to navigate, and the "space" to select and unselect submodules, configure the following options:
+```txt
+Device Drivers --->
+        <*>  Multimedia Support --->
+                [*] Filter Media drivers
+                Media device types --->
+                        [*] Camera and video grabbers
+                Video4Linux options --->
+                        [*] V4L2 sub-device userspace API
+                Media Drivers --->
+                        [*] Media USB Adapeters --->
+                                <*> USB Video Class (UVC)
+                                <*> GSPCA based webcams
+                                
+                        
+                
+```        
 
 And we proceed to build the new kernel and copy it to replace the old one
 ```
